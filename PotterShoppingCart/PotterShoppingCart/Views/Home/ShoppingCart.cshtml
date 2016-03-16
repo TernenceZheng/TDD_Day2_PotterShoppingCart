@@ -1,8 +1,33 @@
-﻿@model PotterShoppingCart.Models.BookOrders
+﻿@model List<PotterShoppingCart.Models.BookOrders>
 @{
     ViewBag.Title = "ShoppingCart";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+    var index = 0;
+    function go() {
+        var bookName = $("#book_list").val()
+        var amount = $("input[name='Amount']").val();
+        var number = $("input[name='Number']").val();
+
+        
+        var show_text =bookName + '單價：' + amount + '，數量：' + number + '<br/>';
+
+        var html = '<div>';
+        html += '<span class=\"col-md-5 control-label\">' + show_text + '</span>';
+        html += '<input type=\"hidden\" name=\"[' + index + '].BookName\" value=\"' + bookName + '\" />';
+        html += '<input type=\"hidden\" name=\"[' + index + '].Amount\" value=\"' + amount + '\" />';
+        html += ' <input type=\"hidden\" name=\"[' + index + '].Number\" value=\"' + number + '\" />';
+        html +=' </div>';
+        index++;
+
+        $("#ShoppingList").append(html);
+
+    }
+
+</script>
+
 
 <h2>哈利波特訂書大放送</h2>
 
@@ -14,23 +39,48 @@
                 <h4>訂購清單。</h4>
                 <hr />
                 <div class="form-group">
-                    @Html.LabelFor(m => m.Amount, new { @class = "col-md-2 control-label" })
+                    <label class="col-md-2 control-label" for="">書冊名稱</label>
                     <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Amount, new { @class = "form-control" })
+                        <select id="book_list">
+                            <option value="第一冊">哈利波特—神秘的魔法石</option>
+                            <option value="第二冊">哈利波特—消失的密室</option>
+                            <option value="第三冊">哈利波特—阿茲卡班的逃犯</option>
+                            <option value="第四冊">哈利波特—火盃的考驗</option>
+                            <option value="第五冊">哈利波特—鳳凰會的密令</option>
+                        </select>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="">金額</label>
+                    <div class="col-md-10">
+                        <input type="text" name="Amount" value="" />
                     </div>
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(m => m.Number, new { @class = "col-md-2 control-label" })
+                    <label class="col-md-2 control-label" for="">數量</label>
                     <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Number, new { @class = "form-control" })
+                        <input type="text" name="Number" value="" />
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
+                        <input id="ShowList" type="button" value="查看清單" class="btn btn-default" onclick="go()" />
+                    </div>
+                    <br />
+                    <div class="col-md-offset-2 col-md-10">
                         <input type="submit" value="訂購" class="btn btn-default" />
                     </div>
                 </div>
+
+                <div id="ShoppingList">
+                </div>
+
+                
+
 
             }
         </section>

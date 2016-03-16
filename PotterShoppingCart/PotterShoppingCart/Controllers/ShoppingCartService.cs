@@ -1,15 +1,21 @@
 ﻿using System;
 using PotterShoppingCart.Models;
+using System.Collections.Generic;
 
 namespace PotterShoppingCart.Controllers
 {
     public class ShoppingCartService
     {
-        public int BuyBooks(BookOrders bookOrders)
+        public double BuyBooks(List<BookOrders> bookOrders)
         {
-            int totoalAmount = 0;
+            double totoalAmount = 0;
 
-            totoalAmount = bookOrders.Amount * bookOrders.Number;
+            foreach (BookOrders item in bookOrders)
+            {
+                totoalAmount = item.Amount * item.Number;
+            }
+
+            totoalAmount = totoalAmount * 0.95;
 
             return totoalAmount;
         }

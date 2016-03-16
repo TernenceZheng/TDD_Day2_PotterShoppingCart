@@ -19,14 +19,15 @@ namespace PotterShoppingCart.Controllers.Tests
         public void Test_第一集買了一本_價格為100()
         {
             //arrange
-            BookOrders bookOrders = new BookOrders() { Amount = 100, Number = 1 };
+            List<BookOrders> orderList = new List<BookOrders>();
+            orderList.Add(new BookOrders() { BookName = "第一冊", Amount = 100, Number = 1 });
 
             var target = new ShoppingCartService();
 
             var expected = 100;
 
             //act r
-            var actual = target.BuyBooks(bookOrders);
+            var actual = target.BuyBooks(orderList);
 
             //assert
             Assert.AreEqual(expected, actual);
