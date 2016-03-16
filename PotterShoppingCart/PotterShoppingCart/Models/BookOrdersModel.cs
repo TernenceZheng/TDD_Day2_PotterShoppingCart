@@ -7,6 +7,12 @@ namespace PotterShoppingCart.Models
 {
     public class BookOrders
     {
+
+        /// <summary>
+        /// 書本名稱
+        /// </summary>
+        public string BookName { get; set; }
+
         /// <summary>
         /// 金額
         /// </summary>
