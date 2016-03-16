@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PotterShoppingCart.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,21 +9,16 @@ namespace PotterShoppingCart.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
 
-        public ActionResult About()
+        //
+        public ActionResult ShoppingCart(BookOrders bookOrders)
         {
-            ViewBag.Message = "Your application description page.";
+            ShoppingCartService shoppingCartService = new ShoppingCartService();
 
-            return View();
-        }
+            bookOrders.Amount = 100;
+            bookOrders.Number = 1;
+            int TotalFee = shoppingCartService.BuyBooks(bookOrders);
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
 
             return View();
         }

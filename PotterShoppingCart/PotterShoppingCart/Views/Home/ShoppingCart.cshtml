@@ -1,0 +1,39 @@
+﻿@model PotterShoppingCart.Models.BookOrders
+@{
+    ViewBag.Title = "ShoppingCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>哈利波特訂書大放送</h2>
+
+<div class="row">
+    <div class="col-md-8">
+        <section id="loginForm">
+            @using (Html.BeginForm("ShoppingCart", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                <h4>訂購清單。</h4>
+                <hr />
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Amount, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Amount, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Number, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Number, new { @class = "form-control" })
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="訂購" class="btn btn-default" />
+                    </div>
+                </div>
+
+            }
+        </section>
+    </div>
+</div>
+

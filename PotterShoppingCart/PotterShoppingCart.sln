@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PotterShoppingCart", "PotterShoppingCart\PotterShoppingCart.csproj", "{D52E682A-32BC-4DDF-B27C-C6B285E635B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PotterShoppingCart.Tests", "PotterShoppingCart.Tests\PotterShoppingCart.Tests.csproj", "{3B4857E5-4B1F-435F-961B-8183FD8F6A5C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PotterShoppingCartTests", "PotterShoppingCartTests\PotterShoppingCartTests.csproj", "{CE11BA67-1D44-43D8-97B2-E9AC2230E485}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{D52E682A-32BC-4DDF-B27C-C6B285E635B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D52E682A-32BC-4DDF-B27C-C6B285E635B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D52E682A-32BC-4DDF-B27C-C6B285E635B9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3B4857E5-4B1F-435F-961B-8183FD8F6A5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B4857E5-4B1F-435F-961B-8183FD8F6A5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3B4857E5-4B1F-435F-961B-8183FD8F6A5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3B4857E5-4B1F-435F-961B-8183FD8F6A5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE11BA67-1D44-43D8-97B2-E9AC2230E485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE11BA67-1D44-43D8-97B2-E9AC2230E485}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE11BA67-1D44-43D8-97B2-E9AC2230E485}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE11BA67-1D44-43D8-97B2-E9AC2230E485}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
