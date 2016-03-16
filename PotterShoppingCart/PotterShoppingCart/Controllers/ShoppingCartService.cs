@@ -31,6 +31,9 @@ namespace PotterShoppingCart.Controllers
                 case 4:
                     discount = 0.80;
                     break;
+                case 5:
+                    discount = 0.75;
+                    break;
                 default:
                     break;
             }
