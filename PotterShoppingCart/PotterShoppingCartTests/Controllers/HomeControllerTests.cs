@@ -149,5 +149,30 @@ namespace PotterShoppingCart.Controllers.Tests
             //assert
             Assert.AreEqual(expected, actual);
         }
+
+
+
+        /// <summary>
+        /// Scenario: 第一集買了一本，第二三集各買了兩本，價格應為100*3*0.9 + 100*2*0.95 = 460
+        /// </summary>
+        [TestMethod()]
+        public void Test_第一集買了一本第二三集各買了兩本_價格為460()
+        {
+            //arrange
+            List<BookOrders> orderList = new List<BookOrders>();
+            orderList.Add(new BookOrders() { BookName = "第一冊", Amount = 100, Number = 1 });
+            orderList.Add(new BookOrders() { BookName = "第二冊", Amount = 100, Number = 2 });
+            orderList.Add(new BookOrders() { BookName = "第三冊", Amount = 100, Number = 2 });
+
+            var target = new ShoppingCartService();
+
+            var expected = 460;
+
+            //act
+            var actual = target.BuyBooks(orderList);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
