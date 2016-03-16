@@ -3,9 +3,9 @@ using PotterShoppingCart.Models;
 
 namespace PotterShoppingCart.Controllers
 {
-    internal class ShoppingCartService
+    public class ShoppingCartService
     {
-        internal int BuyBooks(BookOrders bookOrders)
+        public int BuyBooks(BookOrders bookOrders)
         {
             throw new NotImplementedException();
         }
