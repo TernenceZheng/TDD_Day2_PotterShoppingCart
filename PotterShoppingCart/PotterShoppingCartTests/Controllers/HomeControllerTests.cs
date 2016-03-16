@@ -25,7 +25,7 @@ namespace PotterShoppingCart.Controllers.Tests
 
             var expected = 100;
 
-            //act 
+            //act r
             var actual = target.BuyBooks(bookOrders);
 
             //assert

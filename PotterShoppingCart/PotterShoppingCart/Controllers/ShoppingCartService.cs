@@ -7,7 +7,11 @@ namespace PotterShoppingCart.Controllers
     {
         public int BuyBooks(BookOrders bookOrders)
         {
-            throw new NotImplementedException();
+            int totoalAmount = 0;
+
+            totoalAmount = bookOrders.Amount * bookOrders.Number;
+
+            return totoalAmount;
         }
     }
 }
